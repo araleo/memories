@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const profileRoutes = require('./routes/profile');
 const photosRoutes = require('./routes/photos');
-const audiosRoutes = require('./routes/audios');
+const audioRoutes = require('./routes/audio');
 const commentsRoutes = require('./routes/comments');
 
 const app = express();
@@ -12,7 +12,7 @@ const host = '0.0.0.0';
 
 app.use('/profile', profileRoutes);
 app.use('/photos', photosRoutes);
-app.use('/audios', audiosRoutes);
+app.use('/audio', audioRoutes);
 app.use('/comments', commentsRoutes);
 
 app.get('/', (req, res) => {
@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 });
 
 mongoose
-  .connect('mongodb://root:root@mongo:27017/memories')
+  .connect('mongodb://root:root@mongo:27017')
   .then((result) => {
     app.listen(port, host, () => {
       console.log(`App listening at port ${port}`);
