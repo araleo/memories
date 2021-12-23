@@ -1,0 +1,9 @@
+header {
+  height: 15vh;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+h1 {
+  font-size: 1rem;
+}

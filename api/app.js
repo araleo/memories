@@ -15,12 +15,13 @@ app.use('/photos', photosRoutes);
 app.use('/audio', audioRoutes);
 app.use('/comments', commentsRoutes);
 
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
+
+const mongoUser = process.env.MONGO_USER;
+const mongoPass = process.env.MONGO_PASS;
+const mongoUrl = `mongodb+srv://${mongoUser}:${mongoPass}@memories.kix5u.mongodb.net/memories?retryWrites=true&w=majority`
 
 mongoose
-  .connect('mongodb://root:root@mongo:27017')
+  .connect(mongoUrl)
   .then((result) => {
     app.listen(port, host, () => {
       console.log(`App listening at port ${port}`);
