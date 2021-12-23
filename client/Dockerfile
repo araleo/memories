@@ -1,16 +1,16 @@
-# Build Stage
-FROM node:16 as build-stage
+# # Build Stage
+# FROM node:16 as build-stage
 
-WORKDIR /app
+# WORKDIR /app
 
-COPY package*.json ./
+# COPY package*.json ./
 
-# Must install angular/cli globally to be able to run ng build
-RUN npm install -g @angular/cli && npm install
+# # Must install angular/cli globally to be able to run ng build
+# RUN npm install -g @angular/cli && npm install
 
-COPY ./ .
+# COPY ./ .
 
-RUN ng build
+# RUN ng build
 
 
 # Prod stage
@@ -18,7 +18,7 @@ FROM nginx:1.20 as production-stage
 
 RUN mkdir /app
 
-COPY --from=build-stage /app/dist /app
+COPY ./dist /app
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
 

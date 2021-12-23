@@ -1,0 +1,1 @@
+:root{--clr-detail: #2c8f19;--fnt-title: "Playfair Display", serif;--fnt-text: "Roboto", sans-serif}*{font-family:var(--fnt-text);font-weight:300}h1,h2,h3,h4,h5,h6{font-family:var(--fnt-title);font-weight:700}
