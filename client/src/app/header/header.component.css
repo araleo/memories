@@ -2,8 +2,13 @@ header {
   height: 15vh;
   width: 100%;
   border-bottom: 1px solid black;
+  background-image: url("https://araleo-memories.s3.us-east-2.amazonaws.com/shared/header-image.jpg");
+  background-size: cover;
 }
 
 h1 {
-  font-size: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  opacity: 30%;
 }

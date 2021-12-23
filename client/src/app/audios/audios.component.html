@@ -1,8 +1,12 @@
 <section>
-  <h3>Áudios</h3>
-  <audio controls>
-    <source
-      src="https://araleo-memories.s3.us-east-2.amazonaws.com/audios/0001.m4a"
-    />
-  </audio>
+  <div class="title">
+    <h3>Áudios</h3>
+    <span class="material-icons headphones"> headphones </span>
+  </div>
+  <div class="audios-container" *ngFor="let audio of audios">
+    <p>{{ audio.description }}</p>
+    <audio controls>
+      <source [src]="audio.url" />
+    </audio>
+  </div>
 </section>

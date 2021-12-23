@@ -1,15 +1,11 @@
 <section>
-  <h3>Fotos</h3>
-  <a href="#">
-    <img
-      src="https://araleo-memories.s3.us-east-2.amazonaws.com/photos/532ad9f4-2e14-4471-948c-6e1d3ec0232f.JPG"
-      alt="Foto"
-    />
-  </a>
-  <a href="#">
-    <img
-      src="https://araleo-memories.s3.us-east-2.amazonaws.com/photos/comfausto.jpg"
-      alt="Foto"
-    />
-  </a>
+  <div class="title">
+    <h3>Fotos </h3>
+    <span class="material-icons camera"> photo_camera </span>
+  </div>
+  <div class="photos">
+    <a *ngFor="let photo of photos" [href]="photo.url" target="_blank">
+      <img [src]="photo.url" alt="{{ photo.description }}" />
+    </a>
+  </div>
 </section>

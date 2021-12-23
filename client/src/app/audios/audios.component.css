@@ -1,0 +1,26 @@
+section {
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h3 {
+  width: fit-content;
+}
+
+.headphones {
+  width: fit-content;
+}
+
+.material-icons.headphones {
+  color: var(--clr-detail);
+  height: fit-content;
+}
+
+audio {
+  width: 100%;
+}
