@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import { map } from 'rxjs';
 
-import { Response } from '../shared/models/response';
+import { environment } from 'src/environments/environment';
 import { Photo } from './photo.model';
+import { Response } from '../shared/models/response';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +14,8 @@ export class PhotoService {
   constructor(private http: HttpClient) {}
 
   getPhotos() {
-    return this.http.get<Response>('http://localhost:3000/photos').pipe(
+    const endpoint = environment.apiUrl + 'photos';
+    return this.http.get<Response>(endpoint).pipe(
       map((response: Response) => {
         const allPhotos: Photo[] = [];
         for (const photo of response.data as any) {
