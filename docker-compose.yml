@@ -2,17 +2,21 @@ version: '3'
 
 services:
 
+  # Frontend + Nginx
   client:
-    image: memories-client-dev
+    image: memories-client
     container_name: client_container
     build:
       context: ./client
       dockerfile: Dockerfile
     ports:
+      - 80:80
+      - 443:443
       - 4200:4200
     volumes:
-      - ./client:/app
+      - ./nginx:/etc/nginx/memories
 
+  # Backend
   api:
     image: memories-api-dev
     container_name: api_container
