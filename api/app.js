@@ -5,13 +5,15 @@ const profileRoutes = require('./routes/profile');
 const photosRoutes = require('./routes/photos');
 const audiosRoutes = require('./routes/audios');
 const commentsRoutes = require('./routes/comments');
+const config = require('./config/config');
 
 const app = express();
 const port = 3000;
 const host = '0.0.0.0';
-const mongoUser = process.env.MONGO_USER;
-const mongoPass = process.env.MONGO_PASS;
-const mongoUrl = `mongodb+srv://${mongoUser}:${mongoPass}@memories.kix5u.mongodb.net/memories?retryWrites=true&w=majority`;
+const mongoUser = config.mongoUser;
+const mongoPass = config.mongoPass;
+const mongoUri = config.mongoUri;
+const mongoUrl = `mongodb+srv://${mongoUser}:${mongoPass}@${mongoUri}`;
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');

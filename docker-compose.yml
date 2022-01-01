@@ -17,7 +17,7 @@ services:
 
   # Backend
   api:
-    image: memories-api-dev
+    image: memories-api
     container_name: api_container
     build:
       context: ./api
@@ -25,7 +25,7 @@ services:
     environment:
       - MONGO_USER
       - MONGO_PASS
-      - S3_BUCKET_URL
+      - MONGO_URI
     ports:
       - 3000:3000
     volumes:
